@@ -1,0 +1,57 @@
+.about-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .contributors {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+  }
+  
+  .contributor {
+    background-color: #1f2123; /* Card background color */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Fixed width for each card */
+  }
+  
+  .contributor img {
+    width: 100%; /* Make image responsive */
+    height: 150px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio while covering */
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 10px; /* Space between image and text */
+  }
+  
+  .contributor-info {
+    text-align: center; /* Center-align text */
+  }
+  
+  .contributor-info p {
+    margin: 5px 0; /* Space between paragraphs */
+    color: #f9d3b4; /* Text color */
+  }
+  
+  h1, h2, h3 {
+    color: #f9d3b4; /* Change header colors to ensure visibility */
+  }
+  
+  .about-container p {
+    color: #f9d3b4; /* Change paragraph color for visibility */
+  }
+
+  .github-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+  }
+  
+  .github-logo {
+    width: 30px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
