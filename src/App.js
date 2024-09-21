@@ -35,7 +35,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Marvel");
+    searchMovies("batman");
   }, []);
 
   return (
@@ -81,18 +81,5 @@ const App = () => {
     </Router>
   );
 };
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <Navbar /> {/* Use Navbar component here */}
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//       </Routes>
-//       <Footer />
-//     </Router>
-//   );
-// };
-
 
 export default App;
