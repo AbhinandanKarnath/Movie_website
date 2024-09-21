@@ -6,8 +6,8 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // State for error messages
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const [error, setError] = useState(""); 
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,16 +19,16 @@ const Register = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }), // Include name in the body
+        body: JSON.stringify({ name, email, password }), 
       });
   
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Registration failed");
   
       console.log("Registration successful!", data);
-      navigate("/"); // Redirect to home page or desired route
+      navigate("/login");
     } catch (error) {
-      setError(error.message); // Handle error
+      setError(error.message); 
     }
   };
 

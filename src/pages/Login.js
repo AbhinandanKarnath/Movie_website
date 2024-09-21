@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import "../css/Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +22,9 @@ const Login = () => {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Login failed");
 
-      // Store token (if needed) and redirect to home
+      
       console.log("Login successful!", data.token);
-      navigate("/"); // Redirect to home page
+      navigate("/"); 
     } catch (error) {
       setError(error.message);
     }

@@ -16,7 +16,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((error) => console.error("Error connecting to MongoDB:", error));
 
-// User schema and model
+
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -24,29 +24,49 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("users", UserSchema);
 
+
+app.post("/api/register", async (req, res) => {
+  const { name, email, password } = req.body;
+
+  try {
+    
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "User already exists" });
+    }
+
+    
+    const newUser = new User({ email, password });
+    await newUser.save();
+
+    console.log("User registered successfully:", newUser);
+    res.status(201).json({ message: "Registration successful!" });
+  } catch (error) {
+    console.error("Error during registration process:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 // Login route
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Find the user by email
     const user = await User.findOne({ email });
     console.log("Email provided:", email);
     console.log("User found in database:", user);
 
-    // Check if user exists
     if (!user) {
       console.log("User not found.");
       return res.status(400).json({ error: "User not found" });
     }
 
-    // Direct comparison of passwords (plain text)
+    
     if (password !== user.password) {
       console.log(`Provided password: ${password}, Stored password: ${user.password}`);
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    // Generate JWT token
     const token = jwt.sign({ id: user._id }, "your_jwt_secret", { expiresIn: "1h" });
     console.log("Login successful, JWT token generated.");
     res.json({ token });
@@ -56,12 +76,12 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-// Root route
+
 app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-// Start server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
