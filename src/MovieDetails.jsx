@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import "./css/MovieDetails.css"
+
+
 const MovieDetails = () => {
   const { id } = useParams(); // Extract the movie ID from the URL
   const [movie, setMovie] = useState(null);
@@ -40,9 +43,11 @@ const MovieDetails = () => {
   // Display the movie details
   return (
     <div>
-      <h2>{movie.Title} ({movie.Year})</h2>
+
+      <h2 >{movie.Title} ({movie.Year})</h2>
       <img src={movie.Poster} alt={movie.Title} />
-      <p><strong>Director:</strong> {movie.Director}</p>
+      <p ><strong>Director:</strong> {movie.Director}</p>
+
       <p><strong>Writer:</strong> {movie.Writer}</p>
       <p><strong>Actors:</strong> {movie.Actors}</p>
       <p><strong>Plot:</strong> {movie.Plot}</p>
