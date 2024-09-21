@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i");
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-color: #212426;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 300px;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #1f2123;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #f9d3b4;
+  font-family: var(--font-raleway);
+  text-align: center;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #a1a1a1;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],
+input {
+  width: 100%;
+  background-color: #1f2123;
+  color: #a1a1a1;
+  padding: 1rem;
+  margin-top: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #2f4f7f;
+  border-radius: 8px;
+  font-family: var(--font-raleway);
+  font-size: 1rem;
+  outline: none;
+}
+
+button,
+.login-box input[type="submit"] {
+  width: 100%;
+  background-color: #240124;
+  color: #f9d3b4;
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin-top: 10px;
+}
+
+button:hover,
+.login-box input[type="submit"]:hover {
+  background-color: #2f4f7f;
+}
+
+.login-box p,
+.redirect-register p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #a1a1a1;
+}
+
+.login-box a,
+.redirect-register a {
+  color: #2f4f7f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box a:hover,
+.redirect-register a:hover {
+  color: #f9d3b4;
+}
+
+/* Redirect to Register styling */
+.redirect-register {
+  text-align: center;
+  margin-top: 15px;
+}

@@ -3,17 +3,23 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import MovieDetails from "./MovieDetails";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
 import SearchIcon from "./search.svg";
+// import "font-awesome/css/font-awesome.min.css";
+
 import "./App.css";
 
 const API_URL = "http://www.omdbapi.com/?apikey=9723cf87&plot=full"; 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [movies, setMovies] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    searchMovies("Batman");
-  }, []);
+  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
 
   const searchMovies = async (title) => {
     try {
@@ -24,13 +30,20 @@ const App = () => {
     } catch (error) {
       console.error("Failed to fetch movies:", error);
       setMovies([]);
+
     }
   };
 
+  useEffect(() => {
+    searchMovies("Marvel");
+  }, []);
+
   return (
+// <<<<<<< HEAD
     <Router>
+    <Navbar />
       <div className="app">
-        <h1>Movie Adda</h1>
+        {/* <h1>Movie Adda</h1> */}
         <div className="search">
           <input
             value={searchTerm}
@@ -59,10 +72,27 @@ const App = () => {
             }
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
+          
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
     </Router>
   );
 };
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <Navbar /> {/* Use Navbar component here */}
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+//       <Footer />
+//     </Router>
+//   );
+// };
+
 
 export default App;
