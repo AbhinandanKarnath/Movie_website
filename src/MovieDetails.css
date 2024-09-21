@@ -1,0 +1,96 @@
+/* MovieDetails.css */
+.movie-details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #240124; /* Dark background as per theme */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow for depth */
+  color: #f1f1f1; /* Light text color for contrast */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+}
+
+.movie-details:hover {
+  transform: scale(1.02); /* Subtle hover scale effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.details-content {
+  max-width: 60%;
+  margin-right: 20px;
+}
+
+.details-content h2 {
+  font-size: 2rem;
+  color: #ffffff; /* Brighter heading color for emphasis */
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Make headings stand out more */
+  letter-spacing: 1.5px; /* Add spacing for a sleek look */
+}
+
+.details-content p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #d4d4d4; /* Softer body text for readability */
+  transition: color 0.3s ease-in-out;
+}
+
+.details-content p:hover {
+  color: #ffffff; /* Change text color on hover for better interaction */
+}
+
+.details-image img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow for image */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.details-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Increase shadow depth on hover */
+}
+
+.ratings {
+  margin-top: 15px;
+}
+
+.ratings p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #b0b0b0; /* Subtle color for ratings */
+  font-style: italic; /* Add some flair to the ratings */
+  transition: color 0.3s ease-in-out;
+}
+
+.ratings p:hover {
+  color: #f1f1f1; /* Brighten ratings text on hover */
+}
+
+.error-message {
+  color: #ff6b6b; /* Bright red for error messages */
+  font-weight: bold;
+}
+
+.loading-message {
+  color: #f1f1f1; 
+  font-style: italic;
+}
+
+strong {
+  color: #ffffff; /* Brighter color for key information */
+  font-weight: bold;
+}
+
+p {
+  color: #e0e0e0; /* Softer default color */
+  line-height: 1.6;
+}
+
+/* Add a hover effect to strong elements to make them more interactive */
+strong:hover {
+  color: #ffdd57; /* Brighten key info on hover */
+}
