@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -16,9 +17,11 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
+
 
     if (data.Search) {
       setMovies(data.Search);
@@ -38,6 +41,7 @@ const Home = () => {
           placeholder="Search for movies"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+
         />
         <img
           src={SearchIcon}
@@ -45,6 +49,7 @@ const Home = () => {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
+
 
       <div className="container">
         {movies.length > 0 ? (
@@ -90,5 +95,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;
