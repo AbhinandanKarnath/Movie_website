@@ -87,6 +87,7 @@ strong {
 }
 
 p {
+  margin: 20px;
   color: #e0e0e0; /* Softer default color */
   line-height: 1.6;
 }
@@ -94,4 +95,9 @@ p {
 /* Add a hover effect to strong elements to make them more interactive */
 strong:hover {
   color: #ffdd57; /* Brighten key info on hover */
+}
+
+#plot
+{
+    padding: 20px;
 }
