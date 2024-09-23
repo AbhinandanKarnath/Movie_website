@@ -1,0 +1,33 @@
+.footer-container {
+    background-color: #1f2123;
+    padding: 20px 0;
+    text-align: center;
+    color: #f9d3b4;
+    font-family: "Roboto Slab", serif; /* Use your preferred font */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #f9d3b4; /* Color for social icons */
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #2f4f7f; /* Change color on hover */
+  }
+  
